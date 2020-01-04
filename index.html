@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.min.css">
 </head>
 
-<body>
+<body style="background-color:#d3d3d3!important;">
     <div class="container">
         <div class="row">
             <div class="mt-3 col-12"><img src="symbol.png" width="40px">
@@ -59,8 +59,9 @@
         <hr>
         <p style="line-height: 100%;">
             <small>
-                Copyright &copy; 2019-2020 Korea National University of Transportation: <strong>Applied Machine Intelligence
-                Lab</strong>. All rights reserved.
+                Copyright &copy; 2019-2020 Korea National University of Transportation: <strong>Applied Machine
+                    Intelligence
+                    Lab</strong>. All rights reserved.
                 <br>
                 50, Daehak-ro, Chungju-si, Chungcheongbuk-do, 27469, Republic of Korea
                 <br>
@@ -70,21 +71,29 @@
                     <!--#config timefmt="%F %H:%M:%S" -->
                     Server time :&nbsp;
                     <!--#echo var="DATE_LOCAL" -->
-                    Protocol :&nbsp;<!--#echo var="SERVER_PROTOCOL" -->
+                    Protocol :&nbsp;
+                    <!--#echo var="SERVER_PROTOCOL" -->
                     SSL/TLS :&nbsp;
                     <!--#if expr='v("HTTPS") = "on"' -->
-                        <!--#echo var="SSL_PROTOCOL" -->with&nbsp;<!--#echo var="SSL_CIPHER" -->
+                    <!--#echo var="SSL_PROTOCOL" -->with&nbsp;
+                    <!--#echo var="SSL_CIPHER" -->
                     <!--#else -->
-                        TLS disabled
+                    TLS disabled
                     <!--#endif -->
                     <br>
-                    User-agent :&nbsp;<!--#echo var="HTTP_USER_AGENT" -->
+                    User-agent :&nbsp;
+                    <!--#echo var="HTTP_USER_AGENT" -->
                     <br>
-                    The server will undergo system standard maintenance on second wednesday of every month (KST). Some time during this task, all services will be temporarily unavailable for a couple minutes.
+                    The server will undergo system standard maintenance on second wednesday of every month (KST). Some
+                    time during this task, all services will be temporarily unavailable for a couple minutes.
                     <br>
-                    Powered by Apache HTTPd 2.4 with Windows Server 2019
+                    Powered by Apache HTTPd 2.4 on Windows Server 2019
+                    <p>
+                        <img src="httpd_logo_wide_new.png" alt="" height="20px"><img src="windows_server_2019.png"
+                            alt="" height="20px">
+                    </p>
                 </p>
-                
+
             </small>
         </p>
     </div>
