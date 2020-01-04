@@ -68,17 +68,17 @@
                 <br>
                 <p style="line-height: 100%;">
                     <!--#config timefmt="%F %H:%M:%S" -->
-                    <strong>Server time : </strong>
+                    Server time : 
                     <!--#echo var="DATE_LOCAL" -->
-                    <strong>Protocol : </strong><!--#echo var="SERVER_PROTOCOL" -->
-                    <strong>SSL/TLS : </strong>
+                    Protocol : <!--#echo var="SERVER_PROTOCOL" -->
+                    SSL/TLS : 
                     <!--#if expr='v("HTTPS") = "on"' -->
-                        <!--#echo var="SSL_PROTOCOL" --> with <!--#echo var="SSL_CIPHER" -->
+                        <!--#echo var="SSL_PROTOCOL" -->&nbsp;with&nbsp;<!--#echo var="SSL_CIPHER" -->
                     <!--#else -->
                         TLS disabled
                     <!--#endif -->
                     <br>
-                    <strong>User-agent : </strong><!--#echo var="HTTP_USER_AGENT" -->
+                    User-agent : <!--#echo var="HTTP_USER_AGENT" -->
                     <br>
                     Powered by Apache HTTPd 2.4 with Windows Server 2019
                 </p>
