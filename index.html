@@ -59,12 +59,30 @@
         <hr>
         <p style="line-height: 100%;">
             <small>
-                Copyright &copy; 2019-2020 Korea National University of Transportation: Applied Machine Intelligence
-                Lab. All rights reserved.
+                Copyright &copy; 2019-2020 Korea National University of Transportation: <strong>Applied Machine Intelligence
+                Lab</strong>. All rights reserved.
+                <br>
+                50, Daehak-ro, Chungju-si, Chungcheongbuk-do, 27469, Republic of Korea
                 <br>
                 Contact <a href="mailto:service@loopback.kr">service@loopback.kr</a>
                 <br>
-                Powered by Apache HTTPd 2.4 with Windows Server 2019
+                <p style="line-height: 100%;">
+                    <!--#config timefmt="%F %H:%M:%S" -->
+                    <strong>Server time :</strong>
+                    <!--#echo var="DATE_LOCAL" -->
+                    <strong>Protocol : </strong><!--#echo var="SERVER_PROTOCOL" -->
+                    <strong>SSL/TLS : </strong>
+                    <!--#if expr='v("HTTPS") = "on"' -->
+                        <!--#echo var="SSL_PROTOCOL" --> with <!--#echo var="SSL_CIPHER" -->
+                    <!--#else -->
+                        TLS disabled
+                    <!--#endif -->
+                    <br>
+                    <strong>User-agent : </strong><!--#echo var="HTTP_USER_AGENT" -->
+                    <br>
+                    Powered by Apache HTTPd 2.4 with Windows Server 2019
+                </p>
+                
             </small>
         </p>
     </div>
