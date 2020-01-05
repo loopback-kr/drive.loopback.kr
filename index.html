@@ -54,15 +54,15 @@
                     <li><a href="http://mirror.kakao.com/eclipse/technology/epp/downloads/release/">Eclipse CDN from
                             Daum KaKao</a></li>
                 </ul>
-                <h4>Disk Usage</h4>
+                <h4>Volume Usage</h4>
                 <small>
                     <ul>
                         <li>
                             Scratch-SPAN (HDD @ SATA/3.0Gbps with Span)
                             <?php
-                            $total = round(disk_total_space('J:') / 1024 / 1024 / 1024, 2);
-                            $free = $total - round(disk_free_space('J:') / 1024 / 1024 / 1024, 2);
-                            $percent = 100 - (((string) round((int) disk_free_space("J:") / (int) disk_total_space("J:"), 3) * 100) . '%');
+                            $total = round(disk_total_space('J:') / 1024 / 1024 / 1024, 3);
+                            $used = round($total - disk_free_space('J:') / 1024 / 1024 / 1024, 3);
+                            $percent = round($used / $total * 100, 3);
                             ?>
                             <div class="progress bg-secondary">
                                 <div class="progress-bar bg-info" role="progressbar" style="width: 0<?= $percent . '%' ?>;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><?php echo $free . '/' . $total . ' GB (' . $percent ?>%)</div>
@@ -71,9 +71,9 @@
                         <li>
                             Datasets-HGST (HDD @ SATA/6.0Gbps)
                             <?php
-                            $total = round(disk_total_space('H:') / 1024 / 1024 / 1024, 2);
-                            $free = $total - round(disk_free_space('H:') / 1024 / 1024 / 1024, 2);
-                            $percent = 100 - (((string) round((int) disk_free_space("H:") / (int) disk_total_space("H:"), 3) * 100) . '%');
+                            $total = round(disk_total_space('H:') / 1024 / 1024 / 1024, 3);
+                            $used = round($total - disk_free_space('H:') / 1024 / 1024 / 1024, 3);
+                            $percent = round($used / $total * 100, 3);
                             ?>
                             <div class="progress bg-secondary">
                                 <div class="progress-bar bg-info" role="progressbar" style="width: 0<?= $percent . '%' ?>;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><?php echo $free . '/' . $total . ' GB (' . $percent ?>%)</div>
@@ -82,9 +82,9 @@
                         <li>
                             Sources-Barracuda (HDD @ SATA/6.0Gbps)
                             <?php
-                            $total = round(disk_total_space('G:') / 1024 / 1024 / 1024, 2);
-                            $free = $total - round(disk_free_space('G:') / 1024 / 1024 / 1024, 2);
-                            $percent = 100 - (((string) round((int) disk_free_space("G:") / (int) disk_total_space("G:"), 3) * 100) . '%');
+                            $total = round(disk_total_space('G:') / 1024 / 1024 / 1024, 3);
+                            $used = round($total - disk_free_space('G:') / 1024 / 1024 / 1024, 3);
+                            $percent = round($used / $total * 100, 3);
                             ?>
                             <div class="progress bg-secondary">
                                 <div class="progress-bar bg-info" role="progressbar" style="width: 0<?= $percent . '%' ?>;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><?php echo $free . '/' . $total . ' GB (' . $percent ?>%)</div>
