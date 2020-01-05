@@ -98,8 +98,21 @@
         <small class="footer">
             <p>
                 <!--#config timefmt="%F %H:%M:%S" -->
-                Server time :&nbsp;
-                <!--#echo var="DATE_LOCAL" --> (KST)
+                System uptime (KST) :&nbsp;
+                <?php
+                date_default_timezone_set('Asia/Seoul');
+                $uptime = time() - filectime("../../logs/httpd.pid");
+                $days = floor($uptime / (24 * 3600));
+                $uptime = $uptime - ($days * (24 * 3600));
+                $hours = floor($uptime / (3600));
+                $uptime = $uptime - ($hours * (3600));
+                $minutes = floor($uptime / (60));
+                $uptime = $uptime - ($minutes * 60);
+                $seconds = $uptime;
+                echo $days.':'.sprintf("%02d", $hours).':'.sprintf("%02d", $minutes).':'.sprintf("%02d", $seconds).' (since ' . date("Y-m-d H:i:s", filectime("../../logs/httpd.pid")) . ')';
+                ?>
+                Local time (KST) :&nbsp;
+                <!--#echo var="DATE_LOCAL" -->
                 Protocol :&nbsp;
                 <!--#echo var="SERVER_PROTOCOL" -->
                 SSL/TLS :&nbsp;
