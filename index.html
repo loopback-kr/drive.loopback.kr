@@ -119,7 +119,15 @@
                 <!--#if expr='v("HTTPS") = "on"' -->
                 <!--#echo var="SSL_PROTOCOL" -->with&nbsp;
                 <!--#echo var="SSL_CIPHER" -->
-                HSTS : max-age=31536000;preload; (Chrome 80 Stable)
+                <span id="issuer_raw" style="display: none"><!--#echo var="SSL_SERVER_I_DN" --></span>
+                Issuer : <span id="issuer"></span>&nbsp;
+                <script>
+                    var ssl_issuer_raw = this.document.getElementById('issuer_raw').innerText.trim();
+                    console.log(ssl_issuer_raw);
+                    var start_idx = ssl_issuer_raw.indexOf('=');
+                    var end_idx = ssl_issuer_raw.indexOf(',');
+                    this.document.getElementById('issuer').innerText = ssl_issuer_raw.substr(start_idx + 1, end_idx - 3);
+                </script>
                 <!--#else -->
                 TLS disabled
                 <!--#endif -->
