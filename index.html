@@ -128,6 +128,7 @@
                     var end_idx = ssl_issuer_raw.indexOf(',');
                     this.document.getElementById('issuer').innerText = ssl_issuer_raw.substr(start_idx + 1, end_idx - 3);
                 </script>
+                HSTS : max-age=31536000;preload; (since Chromium/80, Firefox/71)
                 <!--#else -->
                 TLS disabled
                 <!--#endif -->
