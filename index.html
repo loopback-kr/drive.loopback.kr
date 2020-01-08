@@ -115,9 +115,9 @@
                 <!--#echo var="DATE_LOCAL" -->&nbsp;(KST)
                 Protocol :&nbsp;
                 <!--#echo var="SERVER_PROTOCOL" -->
-                SSL/TLS :&nbsp;
+                Secure connection :&nbsp;
                 <!--#if expr='v("HTTPS") = "on"' -->
-                <!--#echo var="SSL_PROTOCOL" --> with HSTS in Chromium/80+, Firefox/71+
+                <!--#echo var="SSL_PROTOCOL" --> with HSTS (Hardcoded in Chromium/80+, Firefox/71+)
                 <!--#else -->
                 TLS disabled
                 <!--#endif -->
@@ -125,7 +125,7 @@
                 <!--#echo var="HTTP_USER_AGENT" -->
             </p>
             <p>
-                The server will undergo system standard maintenance on second Tuesday of every month (UTC). Some time during this task, all services will be temporarily unavailable for a couple minutes.
+                The server will undergo system maintenance and security patch on second Tuesday of every month (UTC). During this operation, all services will be temporarily unavailable for a couple minutes.
             </p>
             <p>
                 Copyright &copy; 2019-2020 Korea National University of Transportation: <strong>Applied Machine Intelligence Lab</strong>. All rights reserved.
