@@ -43,6 +43,10 @@
                     <ul>
                         <li>Adobe Creative Cloud Suite, Microsoft Office Suite, Hancom Office Suite ...</li>
                     </ul>
+                    <li><a href="/share">File sharing over WebDAV</a><br></li>
+                    <ul>
+                        <li>Protected Shared directory</li>
+                    </ul>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -58,7 +62,7 @@
                 <small>
                     <ul>
                         <li>
-                            Scratch-SAMSUNG (HDD @ SATA/3.0Gbps)
+                            Public-SAMSUNG (HDD @ SATA/3.0Gbps)
                             <?php
                             $total = round(disk_total_space('J:') / 1024 / 1024 / 1024, 3);
                             $used = round($total - disk_free_space('J:') / 1024 / 1024 / 1024, 3);
@@ -84,6 +88,17 @@
                             <?php
                             $total = round(disk_total_space('G:') / 1024 / 1024 / 1024, 3);
                             $used = round($total - disk_free_space('G:') / 1024 / 1024 / 1024, 3);
+                            $percent = round($used / $total * 100, 3);
+                            ?>
+                            <div class="progress bg-secondary">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 0<?= $percent . '%' ?>;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><?php echo $used . '/' . $total . ' GB (' . $percent ?>%)</div>
+                            </div>
+                        </li>
+                        <li>
+                            Share-TOSHIBA-Stripe (HDD @ SATA/6.0Gbps)
+                            <?php
+                            $total = round(disk_total_space('I:') / 1024 / 1024 / 1024, 3);
+                            $used = round($total - disk_free_space('I:') / 1024 / 1024 / 1024, 3);
                             $percent = round($used / $total * 100, 3);
                             ?>
                             <div class="progress bg-secondary">
@@ -133,7 +148,7 @@
                 Contact <a href="mailto:service@loopback.kr">service@loopback.kr</a> 50, Daehak-ro, Chungju-si, Chungcheongbuk-do, 27469, Republic of Korea
                 <br>
                 Powered by Apache HTTPd for Windows
-                <img src="apache-http-server-project.png" alt="" height="30px"><img src="microsoft-windows-server-2019.png" alt="" height="16px"><img src="korea-national-university-of-transportation-logo.png" alt="" height="26px"><img src="sectigo.png" alt="" height="18px">
+                <img src="apache-http-server-project.png" alt="" height="30px"><img src="microsoft-windows-server-2019.png" alt="" height="16px"><img src="korea-national-university-of-transportation-logo.png" alt="" height="26px">
             </p>
 
         </small>
