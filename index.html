@@ -59,17 +59,6 @@
                 <small>
                     <ul>
                         <li>
-                            Public-SAMSUNG (HDD @ SATA/3.0Gbps)
-                            <?php
-                            $total = round(disk_total_space('J:') / 1024 / 1024 / 1024, 3);
-                            $used = round($total - disk_free_space('J:') / 1024 / 1024 / 1024, 3);
-                            $percent = round($used / $total * 100, 3);
-                            ?>
-                            <div class="progress bg-secondary">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 0<?= $percent . '%' ?>;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><?php echo $used . '/' . $total . ' GB (' . $percent ?>%)</div>
-                            </div>
-                        </li>
-                        <li>
                             Datasets-HGST (HDD @ SATA/6.0Gbps)
                             <?php
                             $total = round(disk_total_space('H:') / 1024 / 1024 / 1024, 3);
@@ -81,7 +70,7 @@
                             </div>
                         </li>
                         <li>
-                            Sources-Barracuda (HDD @ SATA/6.0Gbps)
+                            Sources-TOSHIBA-RAID0 (HDD @ SATA/6.0Gbps)
                             <?php
                             $total = round(disk_total_space('G:') / 1024 / 1024 / 1024, 3);
                             $used = round($total - disk_free_space('G:') / 1024 / 1024 / 1024, 3);
@@ -116,9 +105,8 @@
                 <!--#echo var="DATE_LOCAL" -->&nbsp;(KST)
                 Protocol :&nbsp;
                 <!--#echo var="SERVER_PROTOCOL" -->
-                Secure connection :&nbsp;
                 <!--#if expr='v("HTTPS") = "on"' -->
-                <!--#echo var="SSL_PROTOCOL" --> with HSTS (Hardcoded in Chromium/80+, Firefox/71+)
+                with&nbsp;<!--#echo var="SSL_PROTOCOL" -->
                 <!--#else -->
                 TLS disabled
                 <!--#endif -->
