@@ -1,13 +1,16 @@
 #title {
-    /* font-style: italic; */
+    font-style: italic;
     font-weight: bold;
-    color: #2e70b8;
-    /* font-family:Segoe UI; */
+    color: #444444;
+    font-family:Segoe UI;
 }
 
-#title-knut {
-    font-weight: bold;
-    color: #5d070c;
+#title-sub{
+    color: #2e70b8;
+}
+
+.center{
+    text-align: center;
 }
 img{
     margin: 6px;;
