@@ -4,7 +4,7 @@
 <head>
     <title>loopback Drive</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#337AB7">
@@ -27,6 +27,22 @@
                     <ul>
                         <li>Public, temporary files ...</li>
                     </ul>
+                    <li><a href="/docs">Documents</a><br></li>
+                    <ul>
+                        <li>Papers ...</li>
+                    </ul>
+                    <li><a href="/img">Images</a><br></li>
+                    <ul>
+                        <li>Images ...</li>
+                    </ul>
+                    <li><a href="/audio">Audio</a><br></li>
+                    <ul>
+                        <li>Audio ...</li>
+                    </ul>
+                    <li><a href="/video">Video</a><br></li>
+                    <ul>
+                        <li>Video ...</li>
+                    </ul>
                     <li><a href="/datasets">Datasets</a><br></li>
                     <ul>
                         <li>Pascal VOC 2005~2006, ImageNet 2012, Microsoft COCO 2014~2017, CIFAR 10-100 ...</li>
@@ -35,7 +51,7 @@
                     <ul>
                         <li>Ubuntu 18.04 LTS, Windows NT 5.1~10.0 ...</li>
                     </ul>
-                    <li><a href="/tools">Development Environment and Utility</a><br></li>
+                    <li><a href="/tools">Utility</a><br></li>
                     <ul>
                         <li>Adobe Creative Cloud Suite, Microsoft Office Suite, Hancom Office HWP ...</li>
                     </ul>
@@ -43,65 +59,27 @@
                     <ul>
                         <li>Images, Audios, Videos ...</li>
                     </ul>
-                    <li><a href="/share">Protected Shared directory</a><br></li>
-                    <ul>
-                        <li>...</li>
-                    </ul>
                 </ul>
             </div>
             <div class="col-md-4">
-                <h4>Redirections</h4>
-                <ul>
-                    <li><a href="https://mirror.kakao.com/">Kakao Mirror</a></li>
-                    <li><a href="https://ftp.kaist.ac.kr/">KAIST FTP</a></li>
-                </ul>
-                <h4>Disk volume usage</h4>
-                <small>
-                    <ul>
-                        <li>
-                            Data drive @ SATA/6.0Gbps with RAID0
-                            <?php
-                            $total = round(disk_total_space('D:') / 1024 / 1024 / 1024, 3);
-                            $used = round($total - disk_free_space('D:') / 1024 / 1024 / 1024, 3);
-                            $percent = round($used / $total * 100, 3);
-                            ?>
-                            <div class="progress bg-secondary">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 0<?= $percent . '%' ?>;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><?php echo $used . '/' . $total . ' GB (' . $percent ?>%)</div>
-                            </div>
-                        </li>
-                    </ul>
-                </small>
+
             </div>
         </div>
         <hr>
         <small class="footer">
             <p>
-                <!--#config timefmt="%F %H:%M:%S" -->
-                System uptime :&nbsp;
-                <?php
-                date_default_timezone_set('Asia/Seoul');
-                $uptime = time() - filectime("../../logs/httpd.pid");
-                $days = floor($uptime / (24 * 3600));
-                $uptime = $uptime - ($days * (24 * 3600));
-                $hours = floor($uptime / (3600));
-                $uptime = $uptime - ($hours * (3600));
-                $minutes = floor($uptime / (60));
-                $uptime = $uptime - ($minutes * 60);
-                $seconds = $uptime;
-                echo $days . ':' . sprintf("%02d", $hours) . ':' . sprintf("%02d", $minutes) . ':' . sprintf("%02d", $seconds) . ' (since ' . date("Y-m-d H:i:s", filectime("../../logs/httpd.pid")) . ' (KST))';
-                ?>
-                Server time :&nbsp;
-                <!--#echo var="DATE_LOCAL" -->&nbsp;(KST)
-                User-agent :&nbsp;
+                Server time:&nbsp;
+                <!--#echo var="DATE_LOCAL" -->&nbsp;
+                User-agent:&nbsp;
                 <!--#echo var="HTTP_USER_AGENT" -->
             </p>
             <p>
                 The server will undergo system maintenance and security patch on second Tuesday of every month (UTC). During this operation, all services will be temporarily unavailable for a couple minutes.
             </p>
             <p>
-                Copyright &copy; 2020-2021 loopback.kr™. All rights reserved.
+                Copyright &copy; 2020-2022 loopback.kr™. All rights reserved.
                 <br>
-                Contact <a href="mailto:service@loopback.kr">service@loopback.kr</a> 127.0.0.1, Chungju 27469, Rep. of KOREA
+                Contact <a href="mailto:hyunseoki@postech.ac.kr">hyunseoki@postech.ac.kr</a> 127.0.0.1, Pohang 37673, Rep. of KOREA
                 <br>
             </p>
 
